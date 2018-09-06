@@ -3,8 +3,9 @@ node('docker-build'){
   def mvnHOME
   def dockerHOME
   stage('Preparations'){
-    //checkout scm
-    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'http://github.com/omrisiri/course']]])
+    checkout scm
+    //Check out from other repository
+    //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'http://github.com/omrisiri/course']]])
     mvnHome = tool 'M3'
     dockerHome = tool 'Docker-Client'
   }
