@@ -1,4 +1,4 @@
-node('docker-build'){
+node('docker-host'){
   cleanWs()
   def mvnHOME
   def dockerHOME
@@ -7,7 +7,7 @@ node('docker-build'){
     //Check out from other repository
     //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'http://github.com/omrisiri/course']]])
     mvnHome = tool 'M3'
-    dockerHome = tool 'Docker-Client'
+    dockerHome = tool 'docker-host'
   }
   stage('Build'){
     sh """
