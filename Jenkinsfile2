@@ -28,4 +28,4 @@ node{
   }
 
   stage('Kubernetes deployment') {
-  echo "
+  echo "kub deployment"
