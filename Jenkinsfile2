@@ -1,0 +1,31 @@
+node{
+  def mvnHome
+  stage('Preparation') {
+    echo "preparation"
+  }
+  
+  stage('Package') {
+    echo "package"
+  }
+
+
+ 
+  stage('Creating Dockerfile') {
+    echo "creating dockerfile"
+  }
+
+
+  stage('Docker build image') {
+    echo "docker build image"
+  }
+  
+  stage('Ansible push image') {
+    echo "ansible push image"
+  } 
+
+  stage('Ansible pull and run image') {
+    echo "ansible pull and run image"  
+  }
+
+  stage('Kubernetes deployment') {
+  echo "
