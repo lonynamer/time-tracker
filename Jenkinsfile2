@@ -1,15 +1,19 @@
 node{
-  def mvnHome
+  cleanWs()
+  def mvnHOME
+  def dockerHOME
   stage('Preparation') {
-    echo "preparation"
+    echo "package"
+    checkout scm
+    mvnHome = tool 'M3'
   }
   
   stage('Package') {
-    echo "package"
+    sh """
+      ${mvnHome}/bin/mvn clean package
+    """
   }
 
-
- 
   stage('Creating Dockerfile') {
     echo "creating dockerfile"
   }
